@@ -31,6 +31,10 @@ public class App {
                 System.out.println("연산자 기호를 정확히 입력해주세요(+ - * /)");
             }
             System.out.println("결과 " + result);
+            // if 문을 활용하여 index 가 10번째에 다달았을 때,
+            // newResults 배열을 생성하여 results 의 값을 한칸씩 당겨 넣어준다.
+            // 마지막 10번째 값을 newResults 마지막에 저장한다.
+            // else 로 이외의 값을 출력하게 한다.
             if (index >= results.length) {
                 int[] newResults = new int[10];
                 for (int i = 0; i < 10; i++) {
