@@ -7,7 +7,9 @@ public class App {
 
     public static void main(String[] args) {
         int[] results = new int[10];
+        // 배열생성
         int index = 0;
+        // index 를 저장하는 변수를 선언
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("첫 번째 숫자를 입력하세요: ");
@@ -30,13 +32,15 @@ public class App {
             }
             System.out.println("결과 " + result);
             results[index] = result;
+            // index 에 결과값을 저장
             index++;
+            // index 번호를 증가시킨다.
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String end = sc.next();
             if (end.equals("exit")) {
                 break;
             }
-            // 마지막에 if 문을 사용하여 exit 입력 시 break 하여 while 문을 종료시킨다.
+
         }
     }
 }
