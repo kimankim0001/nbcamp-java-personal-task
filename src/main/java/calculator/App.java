@@ -17,6 +17,22 @@ public class App {
         char operator = sc.next().charAt(0);
         // 기호 하나만 넣으니까 String 이 아닌 char 를 사용
         // 이때, 스캐너는 String 타입으로만 입력을 받을 수 있어서 charAt() 을 사용하여 char 타입으로 변환해준다.
+        int result = 0;
+        // 사칙연산의 결과값이 될 result 를 선언과 초기화
+        if (operator == '+') {
+            result = firstNum + secondNum;
+        } else if (operator == '-') {
+            result = firstNum - secondNum;
+        } else if (operator == '*') {
+            result = firstNum * secondNum;
+        } else if (operator == '/') {
+            result = firstNum / secondNum;
+        } else {
+            System.out.println("연산자 기호를 정확히 입력해주세요(+ - * /)");
+        }
+        System.out.println("계산 결과는 " + result + " 입니다");
+        // if 문을 사용하여 사칙연산 기호마다 결과값을 계산
+        // 사칙연산 기호 이외의 입력값에는 에러 메시지를 출력
 
     }
 }
