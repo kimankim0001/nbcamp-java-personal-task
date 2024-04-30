@@ -31,6 +31,12 @@ public class Calculator {
     public void removeResult() {
         intList.remove(0);
     }
+    // 저장된 연산 결과들을 조회하는 기능을 가진 inquiryResult 메서드 구현
+    public void inquiryResult() {
+        for (int i : intList) {
+            System.out.println(i + " ");
+        }
+    }
     // Getter 메서드
     public ArrayList<Integer> getIntList() {
         return intList;
