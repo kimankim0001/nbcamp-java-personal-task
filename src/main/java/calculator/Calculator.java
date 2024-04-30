@@ -3,8 +3,10 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    ArrayList<Integer> intList = new ArrayList<Integer>();
-    // List 컬렉션 타입의 변수 intList 선언
+
+    private ArrayList<Integer> intList = new ArrayList<Integer>();
+    // 컬렉션 타입 필드를 외부에서 직접 전근하지 못하도록 private 으로 수정
+
 
     public int calculate(char operator, int num1, int num2) throws BadException{
         // 예외 플래그를 달아준다.
@@ -25,6 +27,12 @@ public class Calculator {
         intList.add(answer);
         return answer;
     }
-    // 요구사항에 맞게 구현
-
+    // Getter 메서드
+    public ArrayList<Integer> getIntList() {
+        return intList;
+    }
+    // Setter 메서드
+    public void setIntList(ArrayList<Integer> intList) {
+        this.intList = intList;
+    }
 }
