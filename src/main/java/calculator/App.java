@@ -31,10 +31,16 @@ public class App {
                 System.out.println("연산자 기호를 정확히 입력해주세요(+ - * /)");
             }
             System.out.println("결과 " + result);
-            results[index] = result;
-            // index 에 결과값을 저장
+            if (index >= results.length) {
+                int[] newResults = new int[10];
+                for (int i = 0; i < 10; i++) {
+                    newResults[i] = results[i + 1];
+                }
+                newResults[9] = result;
+            } else {
+                results[index] = result;
+            }
             index++;
-            // index 번호를 증가시킨다.
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String end = sc.next();
             if (end.equals("exit")) {
