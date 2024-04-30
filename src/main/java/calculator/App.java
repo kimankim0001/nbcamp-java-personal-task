@@ -1,12 +1,14 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
+        int[] results = new int[10];
+        int index = 0;
         Scanner sc = new Scanner(System.in);
-        // while 문을 사용하여 입력 및 연산을 감싸준다.
         while (true) {
             System.out.println("첫 번째 숫자를 입력하세요: ");
             int firstNum = sc.nextInt();
@@ -27,6 +29,8 @@ public class App {
                 System.out.println("연산자 기호를 정확히 입력해주세요(+ - * /)");
             }
             System.out.println("결과 " + result);
+            results[index] = result;
+            index++;
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String end = sc.next();
             if (end.equals("exit")) {
