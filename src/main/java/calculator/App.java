@@ -13,6 +13,10 @@ public class App {
         System.out.println("두 번째 숫자를 입력하세요: ");
         int secondNum = sc.nextInt();
         // 숫자를 입력받으면 해당값을 저장한다.
+        System.out.println("사칙연산 기호를 입력하세요: ");
+        char operator = sc.next().charAt(0);
+        // 기호 하나만 넣으니까 String 이 아닌 char 를 사용
+        // 이때, 스캐너는 String 타입으로만 입력을 받을 수 있어서 charAt() 을 사용하여 char 타입으로 변환해준다.
 
     }
 }
