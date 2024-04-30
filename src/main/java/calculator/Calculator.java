@@ -27,6 +27,10 @@ public class Calculator {
         intList.add(answer);
         return answer;
     }
+    // 가장 먼저 저장된 데이터 삭제 기능 가진 removeResult 메서드 구현
+    public void removeResult() {
+        intList.remove(0);
+    }
     // Getter 메서드
     public ArrayList<Integer> getIntList() {
         return intList;

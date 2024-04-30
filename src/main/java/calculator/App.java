@@ -30,9 +30,8 @@ public class App {
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String input = sc.next();
             if (input.equals("remove")) {
-                calculator.getIntList().remove(0);
-                // intList 를 calculator 클래스에서 가져온다
-                // 구현한 Getter 메서드 활용
+                calculator.removeResult();
+                // removeResult 메서드 활용
             }
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String check = sc.next();
