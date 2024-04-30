@@ -29,16 +29,23 @@ public class App {
                 System.out.println("연산자 기호를 정확히 입력해주세요(+ - * /)");
             }
             System.out.println("결과 " + result);
-
             intList.add(result);
-            // 결과값을 intList 에 저장
-
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String input = sc.next();
             if (input.equals("remove")) {
                 intList.remove(0);
             }
-            // remove 를 사용하여 첫 번째 값 삭제
+
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String check = sc.next();
+            if (check.equals("inquiry")) {
+                for (int i:intList) {
+                    System.out.print(i + " ");
+                }
+                System.out.println();
+                // 결과 출력 후에 바로 옆에 다음 프린트값이 나와서 한 줄 추가함.
+            }
+            // inquiry 입력시 향상된 for 문으로 저장된 연산 결과들 출력
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String end = sc.next();
