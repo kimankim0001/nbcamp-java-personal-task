@@ -39,6 +39,12 @@ public class App {
                     return;
             }
             System.out.println("결과 : " + result);
+            if (index == 10) { // 연산 결과가 10개를 초과하였을 때, {0,1,2,3....,9} 10
+                for (int i = 0; i < results.length; i++) {
+                    results[i] = results[i+1]; // 한칸씩 당겨줌 0에 1의 값을 넣어주고 1에 2의 값을 넣어주고...
+                }
+                index--; // index = 9
+            }
             results[index] = result; // results 배열에 연산 결과 result 를 저장
             index++; // 인덱스 증가
             System.out.println("Arrays.toString(results): " + Arrays.toString(results)); // 출력 확인용
