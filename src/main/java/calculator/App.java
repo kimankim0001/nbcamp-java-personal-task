@@ -18,7 +18,7 @@ public class App {
             calculator.getResults().add(result); // .add 메서드를 사용하여 컬렉션에 연산 결과값을 저장
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             if ("remove".equals(sc.next())) { // 피드백 내용 반영, 입력값이 remove 와 동일할 때,
-                calculator.getResults().remove(0); // index 0 값을 삭제
+                calculator.removeResults(0); // index 0 값을 삭제
             }
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             if ("inquiry".equals(sc.next())) { // 피드백 내용 반영, 입력값이 inquiry 와 동일할 때,

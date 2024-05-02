@@ -42,4 +42,8 @@ public class Calculator {
     public void setResults(List<Integer> results) {
         this.results = results;
     }
+
+    public void removeResults(int index) { // removeResults 메서드 구현
+        this.results.remove(index);
+    }
 }
