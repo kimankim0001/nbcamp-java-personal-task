@@ -22,9 +22,7 @@ public class App {
             }
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             if ("inquiry".equals(sc.next())) { // 피드백 내용 반영, 입력값이 inquiry 와 동일할 때,
-                for (Integer res : calculator.getResults()) { // 향상된 for 문 사용
-                    System.out.println("연산결과 : " + res);
-                }
+                calculator.inquiryResults(); // 조회 요청만 수행
             }
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
         } while (!sc.next().equals("exit")); // exit 라고 입력하기전까지는 반복되어야 하므로 ! 를 사용

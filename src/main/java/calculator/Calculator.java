@@ -46,4 +46,10 @@ public class Calculator {
     public void removeResults(int index) { // removeResults 메서드 구현
         this.results.remove(index);
     }
+
+    public void inquiryResults() { // inquiryResults 메서드 구현, 실제 조회를 실행
+        for (Integer result : results) {
+            System.out.println("연산 결과 = " + result);
+        }
+    }
 }
