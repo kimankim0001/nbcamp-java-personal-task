@@ -1,13 +1,11 @@
 package calculator;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); // Scanner 클래스를 반드시 import
-        int[] results = new int[10]; // int 값 10개를 저장 할 수 있는 results 배열 선언
-        int index = 0; // 배열의 인덱스를 지정해 줄 변수 index 를 선언
+        List<Integer> results = new ArrayList<>(); // List 인터페이스에 ArrayList 구현체 자료구조를 사용
         do { // 무조건 최초에 한번은 실행되어야 하므로 do while 반복문을 사용
             System.out.println("첫 번째 숫자를 입력하세요: ");
             int num1 = sc.nextInt(); // int 값을 입력받으면 해당 값을 변수 num1에 저장
@@ -39,15 +37,11 @@ public class App {
                     return;
             }
             System.out.println("결과 : " + result);
-            if (index == 10) { // 연산 결과가 10개를 초과하였을 때, {0,1,2,3....,9} 10
-                for (int i = 0; i < results.length; i++) {
-                    results[i] = results[i+1]; // 한칸씩 당겨줌 0에 1의 값을 넣어주고 1에 2의 값을 넣어주고...
-                }
-                index--; // index = 9
+            results.add(result); // .add 메서드를 사용하여 컬렉션에 연산 결과값을 저장
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            if ("remove".equals(sc.next())) { // 피드백 내용 반영, 입력값이 remove 와 동일할 때,
+                results.remove(0); // index 0 값을 삭제
             }
-            results[index] = result; // results 배열에 연산 결과 result 를 저장
-            index++; // 인덱스 증가
-            System.out.println("Arrays.toString(results): " + Arrays.toString(results)); // 출력 확인용
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
         } while (!sc.next().equals("exit")); // exit 라고 입력하기전까지는 반복되어야 하므로 ! 를 사용
     }
