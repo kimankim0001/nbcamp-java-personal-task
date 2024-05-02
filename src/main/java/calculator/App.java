@@ -4,7 +4,13 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) {
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>());
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(
+                new ArrayList<>(),
+                new AddOperator(),
+                new SubtractOperator(),
+                new MultiplyOperator(),
+                new DivideOperator()
+        );
         CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>());
         // 두 개로 생성
         Scanner sc = new Scanner(System.in); // Scanner 클래스를 반드시 import
