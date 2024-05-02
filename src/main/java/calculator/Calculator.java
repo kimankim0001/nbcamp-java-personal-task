@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private List<Integer> results = new ArrayList<>(); // 연산 결과를 저장하는 컬렉션 필드 선언
+    private List<Integer> results; // 연산 결과를 저장하는 컬렉션 필드 선언
     // 접근제어자를 사용, 정보 은닉, 캡슐화, 직접 접근을 막음
+    public Calculator(List<Integer> results) { // 오버로딩된 생성자
+        this.results = results; // 생성자를 초기화
+    }
 
     public int calculate (int num1, int num2, char operator) { // 반환 타입이 int 고 3개의 매개변수를 가진 calculate 메서드
         int result = 0; // 연산 결과 값을 저장할 변수 result 를 선언

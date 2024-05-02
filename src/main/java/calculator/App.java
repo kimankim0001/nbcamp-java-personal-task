@@ -4,7 +4,7 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator(); // 인스턴스 생성
+        Calculator calculator = new Calculator(new ArrayList<>()); // 인스턴스 생성 new ArrayList 구현체를 입력
         Scanner sc = new Scanner(System.in); // Scanner 클래스를 반드시 import
         do { // 무조건 최초에 한번은 실행되어야 하므로 do while 반복문을 사용
             System.out.println("첫 번째 숫자를 입력하세요: ");
