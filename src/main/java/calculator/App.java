@@ -15,14 +15,14 @@ public class App {
             char operator = sc.next().charAt(0); // charAt() 을 사용하여 타입을 일치
             int result = calculator.calculate(num1, num2, operator); //Calculator 클래스 연산 결과를 변수에 선언
             System.out.println("결과 : " + result);
-            calculator.results.add(result); // .add 메서드를 사용하여 컬렉션에 연산 결과값을 저장
+            calculator.getResults().add(result); // .add 메서드를 사용하여 컬렉션에 연산 결과값을 저장
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             if ("remove".equals(sc.next())) { // 피드백 내용 반영, 입력값이 remove 와 동일할 때,
-                calculator.results.remove(0); // index 0 값을 삭제
+                calculator.getResults().remove(0); // index 0 값을 삭제
             }
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             if ("inquiry".equals(sc.next())) { // 피드백 내용 반영, 입력값이 inquiry 와 동일할 때,
-                for (Integer res : calculator.results) { // 향상된 for 문 사용
+                for (Integer res : calculator.getResults()) { // 향상된 for 문 사용
                     System.out.println("연산결과 : " + res);
                 }
             }
