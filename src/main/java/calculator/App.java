@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); // Scanner 클래스를 반드시 import
+        do { // 무조건 최초에 한번은 실행되어야 하므로 do while 반복문을 사용
         System.out.println("첫 번째 숫자를 입력하세요: ");
         int num1 = sc.nextInt(); // int 값을 입력받으면 해당 값을 변수 num1에 저장
         System.out.println("두 번째 숫자를 입력하세요: ");
@@ -35,6 +36,8 @@ public class App {
                 return;
         }
         System.out.println("결과 : " + result);
+        System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+        } while (!sc.next().equals("exit")); // exit 라고 입력하기전까지는 반복되어야 하므로 ! 를 사용
     }
 
 }
