@@ -29,6 +29,12 @@ public class App {
                 if ("inquiry".equals(sc.next())) { // 피드백 내용 반영, 입력값이 inquiry 와 동일할 때,
                     arithmeticCalculator.inquiryResults(); // 조회 요청만 수행
                 }
+                System.out.println("저장된 연산결과 중 입력한 값보다 큰 값들을 조회하시겠습니까? (lambda 입력시 조회)");
+                if ("lambda".equals(sc.next())) {
+                    System.out.println("기준 값을 입력하세요: ");
+                    double num = sc.nextDouble();
+                    arithmeticCalculator.printResultGreaterThan(num);
+                }
             } else { // 원의 넓이 묶음
                 System.out.println("원의 반지름을 입력하세요: ");
                 int radius = sc.nextInt();

@@ -32,4 +32,10 @@ public class ArithmeticCalculator<T extends Number> extends Calculator{ // 포�
             System.out.println("연산 결과 = " + result);
         }
     }
+
+    public void printResultGreaterThan(double num) {
+        super.getResults().stream()
+                .filter(result -> result > num)
+                .forEach(result -> System.out.println("연산결과 = " + result));
+    }
 }
