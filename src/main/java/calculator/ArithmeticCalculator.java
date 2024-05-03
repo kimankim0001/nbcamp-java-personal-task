@@ -14,13 +14,13 @@ public class ArithmeticCalculator extends Calculator{ // 포함관계를 가질 
     }
 
     private Operator operatorFactory(char operator) {// 연산 구현체를 선택하는 역할 구현
-        return switch (operator) { // 람다식 스위치
-            case '+' -> new AddOperator();
-            case '-' -> new SubtractOperator();
-            case '*' -> new MultiplyOperator();
-            case '/' -> new DivideOperator();
-            case '%' -> new ModOperator(); // 연산자가 추가되도 여기만 추가해주면 됨
-            default -> throw new UnsupportedOperationException("올바른 선택이 아닙니다.");
+        OperatorType operatorType = OperatorType.fromOperator(operator);
+        return switch (operatorType) { // 람다식 스위치
+            case ADDITION -> new AddOperator();
+            case SUBSTRACTION -> new SubtractOperator();
+            case MULTIPLICATION -> new MultiplyOperator();
+            case DIVISION -> new DivideOperator();
+            case MODULO -> new ModOperator(); // 연산자가 추가되도 여기만 추가해주면 됨
         };
     }
 
