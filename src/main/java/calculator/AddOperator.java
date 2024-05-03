@@ -1,8 +1,14 @@
 package calculator;
 
-public class AddOperator implements Operator { // 인터페이스를 구현 implements
+public class AddOperator<T extends Number> implements Operator<T> { // 인터페이스를 구현 implements
+    public final Class<T> type;
+    public AddOperator(Class<T> type) {
+        this.type = type;
+    }
     @Override
-    public int operate(int num1, int num2) {
-        return num1 + num2;
+    public T operate(T num1, T num2) {
+        double result = num1.doubleValue() + num2.doubleValue();
+
+        return NumberConversionUtils.convertNumberToType(result, type);
     }
 }

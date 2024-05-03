@@ -4,7 +4,7 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) {
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>());
+        ArithmeticCalculator<Double> arithmeticCalculator = new ArithmeticCalculator<>(new ArrayList<>(), Double.class);
         CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>());
         // 두 개로 생성
         Scanner sc = new Scanner(System.in); // Scanner 클래스를 반드시 import
@@ -13,9 +13,9 @@ public class App {
             int choice = sc.nextInt(); // 어떤 계산을 할지 선택
             if (choice == 1) { // 사칙연산 묶음
                 System.out.println("첫 번째 숫자를 입력하세요: ");
-                int num1 = sc.nextInt(); // int 값을 입력받으면 해당 값을 변수 num1에 저장
+                double num1 = sc.nextDouble(); // int 값을 입력받으면 해당 값을 변수 num1에 저장
                 System.out.println("두 번째 숫자를 입력하세요: ");
-                int num2 = sc.nextInt(); // int 값을 입력받으면 해당 값을 변수 num2에 저장
+                double num2 = sc.nextDouble(); // int 값을 입력받으면 해당 값을 변수 num2에 저장
                 System.out.println("사칙연산 기호를 입력하세요: ");
                 char operator = sc.next().charAt(0); // charAt() 을 사용하여 타입을 일치
                 double result = arithmeticCalculator.calculate(num1, num2, operator); //Calculator 클래스 연산 결과를 변수에 선언
